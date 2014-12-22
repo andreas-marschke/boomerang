@@ -73,7 +73,7 @@ A plugin to handle window.onerror events and beacon pre readyState errors by add
 	},
 	replaceObjects: function() {
 	    w.XMLHttpRequest = function() {
-		var ret = new impl.superObjects.XMLHttpRequest(arguments);
+		var ret = new impl.superObjects.XMLHttpRequest(arguments[0]);
 		ret.addEventListener("error", impl.handleXHRError);
 		ret.addEventListener("abort", impl.handleXHRError);
 		ret.addEventListener("load", impl.handleXHRError);
